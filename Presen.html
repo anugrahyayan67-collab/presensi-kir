@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presensi Ekstrakurikuler KIR/KWU</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Presensi Ekstrakurikuler KIR/KWU<br>SMA Negeri 1 Kedungpring 25/26</h1>
+  <p class="description">
+    KIR/KWU hadir untuk mengembangkan prestasi & inovasi siswa, serta mempersiapkan langkah menuju perguruan tinggi.
+  </p>
+
+  <form id="presensiForm">
+    <!-- Nama -->
+    <div class="form-group">
+      <label for="nama">Nama Lengkap</label>
+      <input type="text" id="nama" name="nama" required>
+    </div>
+
+    <!-- Kelas -->
+    <div class="form-group">
+      <label for="kelas">Kelas</label>
+      <div class="custom-select" id="kelasSelect">
+        <div class="selected">-- Pilih Kelas --</div>
+        <div class="options hidden">
+          <div>X-1</div><div>X-2</div><div>X-3</div><div>X-4</div>
+          <div>X-5</div><div>X-6</div><div>X-7</div><div>X-8</div>
+          <div>X-9</div><div>X-10</div><div>X-11</div><div>X-12</div>
+          <div>XI A-1</div><div>XI A-2</div><div>XI A-3</div><div>XI A-4</div><div>XI A-5</div>
+          <div>XI B-1</div><div>XI B-2</div><div>XI B-3</div><div>XI B-4</div>
+          <div>XI C-1</div><div>XI C-2</div><div>XI C-3</div>
+          <div>XII A-1</div><div>XII A-2</div>
+          <div>XII B-1</div><div>XII B-2</div>
+          <div>XII C-1</div><div>XII C-2</div><div>XII C-3</div><div>XII C-4</div>
+          <div>XII D-1</div><div>XII D-2</div><div>XII D-3</div><div>XII D-4</div>
+        </div>
+      </div>
+      <input type="hidden" name="kelas" id="kelasValue">
+    </div>
+
+    <!-- Kehadiran -->
+    <div class="form-group">
+      <label for="kehadiran">Kehadiran</label>
+      <div class="custom-select" id="kehadiranSelect">
+        <div class="selected">-- Pilih Kehadiran --</div>
+        <div class="options hidden">
+          <div>Hadir</div>
+          <div>Izin</div>
+        </div>
+      </div>
+      <input type="hidden" name="kehadiran" id="kehadiranValue">
+    </div>
+
+    <!-- Grup Hadir -->
+    <div id="hadirGroup" class="hidden">
+      <div class="form-group">
+        <label for="pemateri">Pemateri</label>
+        <input type="text" id="pemateri" name="pemateri" placeholder="Nama Pemateri">
+      </div>
+      <div class="form-group">
+        <label for="kodeHarian">Kode Harian</label>
+        <input type="text" id="kodeHarian" name="kodeHarian" placeholder="Masukkan kode harian">
+      </div>
+    </div>
+
+    <!-- Grup Izin -->
+    <div id="izinGroup" class="hidden">
+      <div class="form-group">
+        <label for="alasan">Alasan Izin</label>
+        <textarea id="alasan" name="alasan" placeholder="Tuliskan alasan izin"></textarea>
+      </div>
+    </div>
+
+    <!-- Tanggal -->
+    <div class="form-group">
+      <label for="tanggal">Tanggal</label>
+      <input type="date" id="tanggal" name="tanggal" required>
+    </div>
+
+    <!-- Lokasi -->
+    <input type="hidden" id="lokasi" name="lokasi">
+
+    <!-- Submit -->
+    <button type="submit" id="submitBtn">Kirim</button>
+    <div id="alertBox" class="hidden"></div>
+  </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

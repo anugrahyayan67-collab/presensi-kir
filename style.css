@@ -1,0 +1,244 @@
+  /* ------------------------ */
+  /* Global & Box sizing      */
+  /* ------------------------ */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #e0f7f1, #f9fefc);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+  }
+  
+  .container {
+    background: rgba(255,255,255,0.85);
+    padding: 36px;
+    border-radius: 28px;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.1);
+    backdrop-filter: blur(12px);
+    max-width: 640px;
+    width: 100%;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    animation: floatContainer 6s ease-in-out infinite;
+  }
+  
+  .container:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+  }
+  
+  @keyframes floatContainer {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  
+  h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    background: linear-gradient(90deg, #2e7d32, #66bb6a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleGradient 3s ease infinite alternate;
+    margin-bottom: 12px;
+  }
+  
+  @keyframes titleGradient {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  
+  p.description {
+    font-size: 14px;
+    text-align: center;
+    color: #555;
+    margin-bottom: 28px;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+  
+  /* ------------------------ */
+  /* Form group               */
+  /* ------------------------ */
+  .form-group {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  /* ------------------------ */
+  /* Inputs, textarea, button */
+  /* ------------------------ */
+  input[type="text"],
+  input[type="date"],
+  textarea,
+  .custom-select .selected,
+  button {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid rgba(217,230,222,0.6);
+    border-radius: 16px;
+    background: rgba(255,255,255,0.75);
+    font-size: 14px;
+    backdrop-filter: blur(4px);
+    transition: all 0.4s ease;
+    cursor: pointer;
+  }
+  
+  input:hover,
+  textarea:hover,
+  .custom-select .selected:hover,
+  button:hover {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(46,125,50,0.2);
+  }
+  
+  input:focus,
+  textarea:focus,
+  .custom-select .selected:focus,
+  button:focus {
+    outline: none;
+    border-color: #66bb6a;
+    background: rgba(255,255,255,0.95);
+    box-shadow: 0 0 12px rgba(102,187,106,0.35);
+    transform: scale(1.03);
+  }
+  
+  textarea {
+    resize: none;
+    min-height: 80px;
+  }
+  
+  /* ------------------------ */
+  /* Custom dropdown          */
+  /* ------------------------ */
+  .custom-select {
+    position: relative;
+    width: 100%;
+  }
+  
+  .custom-select .selected {
+    display: block;
+  }
+  
+  .custom-select .options {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid rgba(217,230,222,0.7);
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    z-index: 100;
+    max-height: 220px;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  
+  .custom-select .options div {
+    padding: 12px 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  .custom-select .options div:hover {
+    background: #e0f3e8;
+    color: #2e7d32;
+    transform: scale(1.02);
+  }
+  
+  .custom-select .options:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* ------------------------ */
+  /* Hidden class             */
+  /* ------------------------ */
+  .hidden { display: none; }
+  
+  /* ------------------------ */
+  /* Button                   */
+  /* ------------------------ */
+  button {
+    background: linear-gradient(135deg, #66bb6a, #2e7d32);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(46,125,50,0.3);
+  }
+  
+  button:hover {
+    background: linear-gradient(135deg, #2e7d32, #66bb6a);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 22px rgba(46,125,50,0.45);
+  }
+  
+  /* ------------------------ */
+  /* Loader inside button      */
+  /* ------------------------ */
+  .loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #2e7d32;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* ------------------------ */
+  /* Alert Animasi             */
+  /* ------------------------ */
+  .alert {
+    text-align: center;
+    margin-top: 18px;
+    padding: 14px;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .alert.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .alert.success {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+  
+  .alert.error {
+    background: #ffebee;
+    color: #c62828;
+  }
